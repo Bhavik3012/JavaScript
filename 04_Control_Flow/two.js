@@ -25,6 +25,3 @@ switch (month) {
 
     break;
 }
-
-
-

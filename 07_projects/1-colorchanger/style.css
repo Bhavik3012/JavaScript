@@ -18,8 +18,8 @@ span {
   display: inline-block;
 }
 
-#grey {
-  background: grey;
+#black {
+  background: black;
 }
 
 #white {
@@ -30,4 +30,7 @@ span {
 }
 #yellow {
   background: yellow;
+}
+#green {
+  background: green;
 }

@@ -61,15 +61,37 @@ function checkguess(guess) {
 function displayguess(guess) {
   userinput.value = "";
   guessslot.innerHTML += `${guess},`;
+  remaining.innerHTML = `${10 - numGuess}`;
   numGuess++;
-  remaining.innerHTML = `${11 - numGuess}`;
 }
 
 // display message
-function displayMessage(message) {}
+function displayMessage(message) {
+  lowOrhigh.innerHTML = `<h2>${message}</h2>`;
+}
 
 // endgame
-function endgame() {}
+function endgame() {
+  userinput.value = "";
+  userinput.setAttribute("disabled", "");
+  p.classList.add("button");
+  p.innerHTML = `<h2 id = "newgame">Start New Game</h2>`;
+  startover.appendChild(p);
+  playgame = false;
+  newgame();
+}
 
 // start new game
-function newgame() {}
+function newgame() {
+  const newgamebutton = document.querySelector("#newgame");
+  newgamebutton.addEventListener("click", function (e) {
+    randomnumber = parseInt(Math.random() * 100 + 1);
+    prevGuess = [];
+    numGuess = 1;
+    guessslot.innerHTML = "";
+    remaining.innerHTML = `${10 - numGuess}`;
+    userinput.removeAttribute("disabled");
+    startover.removeChild(p);
+    playgame = true;
+  });
+}

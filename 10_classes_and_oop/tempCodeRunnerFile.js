@@ -1,3 +1,4 @@
-.log(chai.encryptPassword());
-// console.log(chai);
-// console.log(chai.changeusername());
+Object.defineProperty(chai, "name", {
+//   writable: false,
+//   enumerable: false,
+// });
